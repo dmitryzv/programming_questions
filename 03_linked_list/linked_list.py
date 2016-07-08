@@ -51,8 +51,10 @@ def advance(head_, n):
 def print_list(head_):
 	curr = head_
 	to_print = []
-	while curr:
+	visited_nodes = {}
+	while curr and curr not in visited_nodes:
 		to_print.append(str(curr.val))
+		visited_nodes[curr] = True
 		curr = curr.next_
 
 	print('->'.join(to_print))
